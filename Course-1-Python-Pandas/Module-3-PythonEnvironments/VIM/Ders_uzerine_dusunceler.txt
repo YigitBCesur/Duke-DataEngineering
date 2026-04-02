@@ -1,0 +1,32 @@
+Ders Üzerine Düşünceler
+Dersin En Önemli 3 Noktası:
+
+Vim'in komutlar için normal mod, metin yazmak için ekleme modu ve metin seçmek için görsel mod dahil olmak üzere birden fazla modu vardır.
+
+Vim, fare seçimlerine güvenmek yerine klavye kısayollarını kullanarak metni son derece verimli bir şekilde işleyebilir.
+
+Vim, ~/.vimrc dosyasında saklanan kullanıcı ayarları aracılığıyla oldukça özelleştirilebilir.
+
+5 Düşünme Sorusu:
+
+Şu ana kadar en çok hangi Vim modunu kullanıyorsunuz? Modlar arasında geçiş yapmanıza hangi tuşlar yardımcı oluyor?
+
+Fare kullanmadan çalışmak düzenleme iş akışınızı nasıl etkiledi? Hangi Vim gezinme komutlarını en kullanışlı buluyorsunuz?
+
+Vim'i düzenleme tarzınıza uyarlamak için ne gibi özelleştirmeler yaptınız veya yapmak istiyorsunuz?
+
+Şu anda Vim'in hangi özellikleri daha az sezgisel veya kavraması daha zor görünüyor? Bunları daha doğal hale getirmek için hangi ek pratikler yapılabilir?
+
+Vim'in modlu düzenleme modeline hakim olmak, ilk öğrenme sürecini atlattıktan sonra ilerleyen zamanlarda verimlilik artışına nasıl katkı sağlayabilir?
+
+5 Zorlu Egzersiz:
+
+10 dakika boyunca yalnızca Vim klavye komutlarını kullanarak (fare veya ok tuşları kullanmadan) düzenleme yapmayı deneyin! Ne kadar iş başarabileceğinize bakın.
+
+~/.vimrc dosyanızı özelleştirin ve düzenleme deneyiminizi iyileştirmek için en az 3 seçenek ayarlayın. Örnek: satır numaraları, sözdizimi vurgulama, otomatik girintileme.
+
+"Ci", "di', yip" ve size hitap eden diğer metin nesnelerini kullanarak metin nesnesi seçimi pratiği yapın. Bu nesnelerin hassas düzenlemeyi nasıl mümkün kıldığını fark edin.
+
+Vim kullanarak kısa bir dosyayı düzenleyin ve tuş vuruşu sayınızı ölçün. Şimdi aynı düzenlemeleri başka bir editörde yapmayı deneyin ve verimliliği karşılaştırın.
+
+%, zt veya işaretler gibi 3 yeni hareket komutunu bulun ve uygulayın. Bu komutların dosyalar arasında daha hızlı gezinmenize nasıl yardımcı olabileceğini keşfedin.

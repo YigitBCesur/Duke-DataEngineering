@@ -17,3 +17,39 @@ Workspaces - A Visual Studio Code concept that allows you to group one or more f
 
 -------------------------------------------------------
 
+Ders Üzerine Düşünceler
+Bu derste Visual Studio Code'a genel bir bakış sunuldu; ne olduğu, temel özellikleri ve geliştirme için nasıl kullanılmaya başlanacağı ele alındı. Öğrenilen en önemli noktalar şunlardır:
+
+Visual Studio Code, web/bulut geliştirme için ücretsiz ve özelleştirilebilir bir kod editörüdür.
+
+Kod hata ayıklama, sürüm kontrolü, eklentiler ve daha fazlası için yerleşik destek sunar.
+
+Temalar, klavye kısayolları ve eklentiler aracılığıyla VS Code'u ihtiyaçlarınıza göre özelleştirebilirsiniz.
+
+VS Code, çok dosyalı ve çok dilli projeleri düzenlemek için çalışma alanları kullanır.
+
+Explorer, Arama, Kaynak Denetimi ve diğer paneller, kodda gezinmenize ve kodu yönetmenize yardımcı olur.
+
+Düşünme Soruları:
+
+Visual Studio Code'u başka bir kod düzenleyiciye göre kullanmanın bazı avantajları nelerdir?
+
+Uzantılar nedir ve iş akışınızı iyileştirmenize nasıl yardımcı olabilirler?
+
+VS Code'u kişisel kodlama tercihlerinize en uygun şekilde nasıl yapılandırabilirsiniz?
+
+Visual Studio Code'da sunulan başlıca hata ayıklama özellikleri nelerdir?
+
+VS Code'da büyük ve karmaşık projeleri düzenlemek için çalışma alanlarını nasıl kullanabilirsiniz?
+
+Zorluklar:
+
+Visual Studio Code'u yükleyin ve bu derste ele alınan temel özellikleri test edin.
+
+VS Code'da kendi kullanıcı ayarlarınızı, klavye kısayollarınızı ve renk temanızı yapılandırın.
+
+Geliştirme ihtiyaçlarınız için faydalı olan 1-2 eklentiyi inceleyin ve yükleyin.
+
+VS Code'da basit bir web veya Rust uygulamasında hata ayıklama alıştırması yapın.
+
+VS Code'da tam kapsamlı bir proje için çok dilli bir çalışma alanı oluşturun.

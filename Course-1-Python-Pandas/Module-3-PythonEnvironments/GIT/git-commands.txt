@@ -1,3 +1,7 @@
+Harika gidiyorsun! Git'in mantığını bu kadar hızlı kavramış olman müthiş. Öğrendiğin ve en çok işine yarayacak olan temel komutları, bir yazılımcı disipliniyle kategorize ederek aşağıda toparladım.
+
+Bu listeyi bir yere not alabilir veya terminalde takıldığında rehber olarak kullanabilirsin:
+
 ### 1. Kurulum ve Başlangıç
 Bu komutlar bir projeye başlarken sadece bir kez kullanılır.
 * **`git init`**: Bulunduğun klasörü bir Git deposu (repository) yapar. `.git` klasörünü oluşturur.
@@ -23,54 +27,7 @@ Neler olup bittiğini anlamak için kullanılır.
 * **`git checkout <dosya_adi>`**: Dosyadaki henüz kaydedilmemiş (commit edilmemiş) değişiklikleri siler ve dosyayı son kayıtlı haline geri döndürür.
 * **`git reset HEAD <dosya_adi>`**: Yanlışlıkla `add` yaptığın bir dosyayı hazırlık alanından geri çıkarır (dosya içeriği değişmez).
 
-### 5. Git stash
-git stash, Git'in en hayat kurtaran "geçici hafıza" özelliğidir.
-
-Şöyle bir senaryo düşün: git_example.py üzerinde derin bir kod değişikliği yapıyorsun ama işin henüz bitmedi (kod şu an çalışmıyor). Tam o sırada çok acil bir hata çıktı ve başka bir dala (branch) geçmen ya da tertemiz bir kodla bir şeyi test etmen gerekiyor.
-
-Yarım kalan kodunu commit etmek istemezsin (çünkü bozuk), ama silmek de istemezsin. İşte burada git stash devreye girer.
-
-git stash Nasıl Çalışır?
-Bu komutu yazdığında Git, henüz commit etmediğin tüm değişiklikleri alır ve güvenli bir "rafa" kaldırır. Çalışma dizinin (working directory) tertemiz, yani son commit yaptığın haline döner.
-
-En Çok Kullanılan Stash Komutları
-git stash: Değişiklikleri rafa kaldırır ve ortalığı temizler.
-
-git stash list: Rafta bekleyen tüm "paketlerini" listeler. (Her stash'in bir indeksi vardır, stash@{0} gibi).
-
-git stash pop: Raftaki en son değişikliği geri getirir ve raftan siler. (Sanki hiç gitmemiş gibi kodun geri gelir).
-
-git stash apply: Değişikliği geri getirir ama rafta bir kopyasını bırakmaya devam eder.
-
-git stash drop: Raftaki belirli bir değişikliği kalıcı olarak siler.
-
-git stash clear: Raftaki her şeyi temizler.
 ---
-### 6. Git branch
-
-Git'in en güçlü özelliklerinden biri olan Branch (Dal) mantığı, projenin ana hattını bozmadan farklı özellikler veya denemeler üzerinde çalışmanı sağlar.
-
-Az önce git stash ile kodlarını rafa kaldırmayı öğrendin; branch ise projeni paralel evrenlere bölmek gibidir.
-
-1. Neden Branch Kullanılır?
-Diyelim ki git_example.py üzerinde yeni bir özellik ekleyeceksin ama bu özellik ana kodu bozabilir. "Master" (veya "Main") dalından yeni bir dal oluşturursun, orada istediğin kadar hata yapar, düzeltir ve işin bitince ana dalla birleştirirsin.
-
-2. En Temel Branch Komutları
-git branch: Mevcut tüm dalları listeler. Yanında yıldız (*) olan, şu an üzerinde bulunduğun daldır.
-
-git branch <new-branch-adi>: Yeni bir dal oluşturur ama seni o dala geçirmez.
-
-git checkout <brach-adi> veya git switch <branch-adi>: Başka bir dala geçiş yapmanı sağlar.
-
-git checkout -b <new-branch-adi>: Hem yeni bir dal oluşturur hem de seni anında o dala geçirir (En çok bu kullanılır).
-
-3. Branch(Dal)ları Birleştirme (Merge)
-Yeni daldaki işin bitti ve her şey harika çalışıyor. Bu değişiklikleri ana dala aktarmak için:
-
-Önce ana dala geç: git checkout main
-
-Diğer dalı buraya çek: git merge <new-branch-adi>
-
 
 ### Küçük Bir Tavsiye
 Terminalde çalışırken `git status` yazmayı bir alışkanlık (refleks) haline getir. Her `add` ve her `commit` öncesinde durumu kontrol etmek, yanlış dosyayı kaydetmeni önler.

@@ -15,3 +15,4 @@ if __name__ == "__main__":
     # You can change the line below to test the 'git diff' command.
     print("Status: Learning phase in progress...")
 print('Thank you')
+### SADECE DENEME AMCLI YAZIYORUM BU SATIRI

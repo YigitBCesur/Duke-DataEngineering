@@ -46,6 +46,31 @@ git stash drop: Raftaki belirli bir değişikliği kalıcı olarak siler.
 
 git stash clear: Raftaki her şeyi temizler.
 ---
+### 6. Git branch
+
+Git'in en güçlü özelliklerinden biri olan Branch (Dal) mantığı, projenin ana hattını bozmadan farklı özellikler veya denemeler üzerinde çalışmanı sağlar.
+
+Az önce git stash ile kodlarını rafa kaldırmayı öğrendin; branch ise projeni paralel evrenlere bölmek gibidir.
+
+1. Neden Branch Kullanılır?
+Diyelim ki git_example.py üzerinde yeni bir özellik ekleyeceksin ama bu özellik ana kodu bozabilir. "Master" (veya "Main") dalından yeni bir dal oluşturursun, orada istediğin kadar hata yapar, düzeltir ve işin bitince ana dalla birleştirirsin.
+
+2. En Temel Branch Komutları
+git branch: Mevcut tüm dalları listeler. Yanında yıldız (*) olan, şu an üzerinde bulunduğun daldır.
+
+git branch <new-branch-adi>: Yeni bir dal oluşturur ama seni o dala geçirmez.
+
+git checkout <brach-adi> veya git switch <branch-adi>: Başka bir dala geçiş yapmanı sağlar.
+
+git checkout -b <new-branch-adi>: Hem yeni bir dal oluşturur hem de seni anında o dala geçirir (En çok bu kullanılır).
+
+3. Branch(Dal)ları Birleştirme (Merge)
+Yeni daldaki işin bitti ve her şey harika çalışıyor. Bu değişiklikleri ana dala aktarmak için:
+
+Önce ana dala geç: git checkout main
+
+Diğer dalı buraya çek: git merge <new-branch-adi>
+
 
 ### Küçük Bir Tavsiye
 Terminalde çalışırken `git status` yazmayı bir alışkanlık (refleks) haline getir. Her `add` ve her `commit` öncesinde durumu kontrol etmek, yanlış dosyayı kaydetmeni önler.

@@ -1,0 +1,35 @@
+Harika gidiyorsun! Git'in mantığını bu kadar hızlı kavramış olman müthiş. Öğrendiğin ve en çok işine yarayacak olan temel komutları, bir yazılımcı disipliniyle kategorize ederek aşağıda toparladım.
+
+Bu listeyi bir yere not alabilir veya terminalde takıldığında rehber olarak kullanabilirsin:
+
+### 1. Kurulum ve Başlangıç
+Bu komutlar bir projeye başlarken sadece bir kez kullanılır.
+* **`git init`**: Bulunduğun klasörü bir Git deposu (repository) yapar. `.git` klasörünü oluşturur.
+* **`git config --global user.name "Adın"`**: Git'e kim olduğunu tanıtır.
+
+### 2. Gündelik Çalışma Akışı (En Çok Kullanacakların)
+Dosyalar üzerinde değişiklik yaptıkça bu döngüyü sürekli kullanacaksın.
+* **`git status`**: En yakın dostundur. Hangi dosyalar değişti, hangileri "sahneye" eklendi, terminalde kırmızı/yeşil renklerle gösterir.
+* **`git add <dosya_adi>`**: Belirli bir dosyayı bir sonraki kayıt (commit) için hazırlar.
+* **`git add .`**: Klasördeki **tüm** değişiklikleri hazırlık alanına (staging area) ekler.
+* **`git commit -m "Mesajın"`**: Hazırladığın değişiklikleri kalıcı olarak bir "versiyon" olarak kaydeder. Mesaj kısmına ne yaptığını net yazmak (Örn: "Hata düzeltildi") ileride hayat kurtarır.
+
+
+
+### 3. İnceleme ve Takip
+Neler olup bittiğini anlamak için kullanılır.
+* **`git diff`**: Henüz `add` yapmadığın değişiklikleri satır satır gösterir (Az önce yeşil çizgilerle gördüğün ekran).
+* **`git log`**: Yapılan tüm kayıtların (commit) geçmişini listeler. Kim, ne zaman, ne yazmış?
+* **`git log --oneline`**: Geçmişi çok daha kısa ve öz bir liste olarak sunar.
+
+### 4. Hata Yönetimi ve Geri Dönüş
+İşler karıştığında kullanılan "acil durum" komutları.
+* **`git checkout <dosya_adi>`**: Dosyadaki henüz kaydedilmemiş (commit edilmemiş) değişiklikleri siler ve dosyayı son kayıtlı haline geri döndürür.
+* **`git reset HEAD <dosya_adi>`**: Yanlışlıkla `add` yaptığın bir dosyayı hazırlık alanından geri çıkarır (dosya içeriği değişmez).
+
+---
+
+### Küçük Bir Tavsiye
+Terminalde çalışırken `git status` yazmayı bir alışkanlık (refleks) haline getir. Her `add` ve her `commit` öncesinde durumu kontrol etmek, yanlış dosyayı kaydetmeni önler.
+
+Şimdi bu komutlarla kendi `git_example.py` dosyan üzerinde biraz daha "oynayabilirsin". Mesela bir satır silip `git diff` ile nasıl göründüğüne bakmaya ne dersin?

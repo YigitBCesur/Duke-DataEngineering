@@ -72,6 +72,48 @@ Yeni daldaki işin bitti ve her şey harika çalışıyor. Bu değişiklikleri a
 Diğer dalı buraya çek: git merge <new-branch-adi>
 
 
+### 7. Git log
+git log komutu, projenin zaman makinesi gibidir. Bu komutu yazdığında, o ana kadar yaptığın tüm "commit"leri (kayıt duraklarını) kronolojik olarak listelersin.
+1. git log Çıktısında Neler Görürsün?
+Komutu yazdığında karşına çıkan her blok şunları içerir:
+
+Commit Hash: commit a1b2c3d... şeklinde uzun bir kod. Bu, o kaydın benzersiz kimliğidir.
+
+Author: Değişikliği kimin yaptığı (Senin ismin ve e-postan).
+
+Date: Kaydın yapıldığı tam zaman.
+
+Message: Senin git commit -m ile yazdığın açıklama.
+
+2. Hayat Kurtaran git log Parametreleri
+Standart git log bazen çok uzun ve okunması zor olabilir. Veri mühendisliği projelerinde şu versiyonları daha sık kullanırız:
+
+Tek Satırda Özet: (En çok kullanılan budur)
+
+Bash
+git log --oneline
+Grafiksel Görünüm: (Terminalde dallanmaları görmek için)
+
+Bash
+git log --oneline --graph --all
+Son N Kaydı Gör: (Sadece son 3 kaydı görmek için)
+
+Bash
+git log -n 3
+Dosya Bazlı Takip: (Sadece hello.py dosyasındaki değişimleri görmek için)
+
+Bash
+git log hello.py
+3. Log'dan Nasıl Çıkılır?
+Eğer log listen çok uzunsa, terminalin altında : işaretini görürsün ve ekran donmuş gibi gelebilir.
+
+Çıkmak için: Klavyeden sadece q (quit) tuşuna basman yeterlidir.
+
+Senin İçin Bir İpucu:
+Daha önce yaptığın o "git stash added to file" veya "updated" mesajlı commit'lerini şu an terminalde git log --oneline yazarak görmeyi dene. En üstteki commit'in yanında muhtemelen (HEAD -> master) veya (HEAD -> deneme) yazacaktır.
+
+
+
 ### Küçük Bir Tavsiye
 Terminalde çalışırken `git status` yazmayı bir alışkanlık (refleks) haline getir. Her `add` ve her `commit` öncesinde durumu kontrol etmek, yanlış dosyayı kaydetmeni önler.
 

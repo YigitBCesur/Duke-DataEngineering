@@ -1,0 +1,36 @@
+# Ders Üzerine Düşünceler
+##Önemli Noktalar
+
+Git ile sürüm kontrolü, kodda zaman içinde yapılan değişiklikleri izlemeyi ve birden fazla geliştirici arasında işbirliğini sağlamayı mümkün kılar.
+
+Depolar, bir projeye ait dosyaların yanı sıra projenin tüm revizyon geçmişini de içerir.
+
+Commit'ler, güncellemeleri açıklayan açıklayıcı mesajlarla birlikte değişikliklerin anlık görüntülerini yakalar.
+
+Dallanmalar, bir araya getirilmeden önce bağımsız değişiklik akışları üzerinde çalışmaya olanak tanır.
+
+GitHub, işbirliği ve paylaşım için uzaktan depo barındırma hizmeti sunmaktadır.
+
+### Düşünme Soruları
+
+Git ile sürüm kontrolü kullanmak hangi tür projelere fayda sağlar?
+
+Birden fazla geliştirici aynı kod tabanı üzerinde çalışırken, konu dalları koordinasyonu nasıl geliştirebilir?
+
+Commit mesajları oluştururken hangi en iyi uygulamaları izlemelisiniz?
+
+Yeni özellikleri birleştirmeden önce kod incelemeleri sırasında çekme isteklerinden nasıl yararlanabilirsiniz?
+
+Tipik geliştirme iş akışınızda en değerli Git komutları hangileri gibi görünüyor?
+
+### Zorlu Egzersizler
+
+Yerel bir Git deposu başlatın ve birden fazla dosyayı değiştiren bazı commit'ler yapın.
+
+Depoyu GitHub uzak deposuna gönderin ve dallar arasında çekme istekleri açın.
+
+Aktif bir açık kaynak kodlu GitHub projesinin commit geçmişini inceleyin.
+
+Uzak sunucularla basitleştirilmiş kimlik doğrulama için SSH anahtarları oluşturun.
+
+Git config komutuyla kimliğinizi global olarak ve proje bazında yapılandırın.

@@ -22,3 +22,5 @@ Plug-in - Eklenti  - İşlevselliği genişleten bir ek bileşen.
 # Plugin 
 source ~/.zshrc # Reloads zsh config with plugins
 
+
+

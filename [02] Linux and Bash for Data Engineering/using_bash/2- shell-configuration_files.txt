@@ -8,4 +8,4 @@ source ---> environment
 functions ---> custom code
 
 ### CONFIGURING.bashrc
-
+Lutfen 3- configuring_bashrc_with_export .md  dosyasina bakiniz.

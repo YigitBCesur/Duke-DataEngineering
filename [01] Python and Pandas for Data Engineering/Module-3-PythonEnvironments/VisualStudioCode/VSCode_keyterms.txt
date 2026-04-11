@@ -1,0 +1,55 @@
+Key Terms
+
+Visual Studio Code - A free, open-source, lightweight code editor with support for debugging, version control, and extensions. It can be used to develop web, desktop, and cloud applications across many languages.
+                    Hata ayıklama, sürüm kontrolü ve eklentileri destekleyen, ücretsiz, açık kaynaklı, hafif bir kod düzenleyicisidir. Birçok dilde web, masaüstü ve bulut uygulamaları geliştirmek için kullanılabilir.
+
+Extensions (Uzantilar) - Add-on tools and features that allow you to customize and enhance Visual Studio Code for your development needs. Some common extensions include linters, debuggers, snippets, and language support.
+     
+Debugging (Hata ayıklama) - The process of detecting and removing errors from computer hardware or software. Visual Studio Code has built-in debugging support, allowing you to set breakpoints, step through code, and inspect variables.
+                             - Bilgisayar donanımı veya yazılımındaki hataları tespit etme ve giderme işlemidir. Visual Studio Code, kesme noktaları belirlemenize, kodda adım adım ilerlemenize ve değişkenleri incelemenize olanak tanıyan yerleşik hata ayıklama desteğine sahiptir.
+
+Version Control - The management of changes to code over time. Visual Studio Code integrates with Git and other version control systems to track revisions, review history, and collaborate with teams.
+                 Kodda zaman içinde yapılan değişikliklerin yönetimi. Visual Studio Code, revizyonları izlemek, geçmişi incelemek ve ekiplerle işbirliği yapmak için Git ve diğer sürüm kontrol sistemleriyle entegre olur.
+
+Workspaces - A Visual Studio Code concept that allows you to group one or more folders that contain code. Useful for organizing multi-file and multi-language projects into a single editable space.
+          - Visual Studio Code'da kod içeren bir veya daha fazla klasörü gruplandırmanıza olanak tanıyan bir kavramdır. Çok dosyalı ve çok dilli projeleri tek bir düzenlenebilir alanda organize etmek için kullanışlıdır.
+
+
+-------------------------------------------------------
+
+Ders Üzerine Düşünceler
+Bu derste Visual Studio Code'a genel bir bakış sunuldu; ne olduğu, temel özellikleri ve geliştirme için nasıl kullanılmaya başlanacağı ele alındı. Öğrenilen en önemli noktalar şunlardır:
+
+Visual Studio Code, web/bulut geliştirme için ücretsiz ve özelleştirilebilir bir kod editörüdür.
+
+Kod hata ayıklama, sürüm kontrolü, eklentiler ve daha fazlası için yerleşik destek sunar.
+
+Temalar, klavye kısayolları ve eklentiler aracılığıyla VS Code'u ihtiyaçlarınıza göre özelleştirebilirsiniz.
+
+VS Code, çok dosyalı ve çok dilli projeleri düzenlemek için çalışma alanları kullanır.
+
+Explorer, Arama, Kaynak Denetimi ve diğer paneller, kodda gezinmenize ve kodu yönetmenize yardımcı olur.
+
+Düşünme Soruları:
+
+Visual Studio Code'u başka bir kod düzenleyiciye göre kullanmanın bazı avantajları nelerdir?
+
+Uzantılar nedir ve iş akışınızı iyileştirmenize nasıl yardımcı olabilirler?
+
+VS Code'u kişisel kodlama tercihlerinize en uygun şekilde nasıl yapılandırabilirsiniz?
+
+Visual Studio Code'da sunulan başlıca hata ayıklama özellikleri nelerdir?
+
+VS Code'da büyük ve karmaşık projeleri düzenlemek için çalışma alanlarını nasıl kullanabilirsiniz?
+
+Zorluklar:
+
+Visual Studio Code'u yükleyin ve bu derste ele alınan temel özellikleri test edin.
+
+VS Code'da kendi kullanıcı ayarlarınızı, klavye kısayollarınızı ve renk temanızı yapılandırın.
+
+Geliştirme ihtiyaçlarınız için faydalı olan 1-2 eklentiyi inceleyin ve yükleyin.
+
+VS Code'da basit bir web veya Rust uygulamasında hata ayıklama alıştırması yapın.
+
+VS Code'da tam kapsamlı bir proje için çok dilli bir çalışma alanı oluşturun.

@@ -12,14 +12,13 @@ Eğer terminali kapatırsan export ile tanımladığın food değişkeni uçar g
 Eğer kalıcı olmasını istersen, bunları ana klasöründeki .bashrc veya .zshrc dosyasına yazman gerekir.
 Öğrendiğin bu basit export komutu, aslında 
                    devasa bulut sistemlerinin (AWS, Google Cloud) nasıl yapılandırıldığının en temel yapı taşıdır.
-
-                    nano ~/.bashrc
+"""
+                    nano.bashrc
                     export food="apricot"    # nanonun en alt satirina 
                     source ~/.bashrc     # Dosyayı kaydetmen yetmez, terminale "ayarlarımı yenile" demen gerekir:yani Değişikliği Sisteme Tanıt
-
+"""
 ### Küçük Bir İpucu
 Daha profesyonel bir yaklaşım istersen, şifrelerini doğrudan .bashrc içine yazmak yerine, onları tırnak içinde tutmaya özen göster: 
 export KEY="deger". 
 Bu, değerin içinde boşluk veya özel karakter varsa hata almanı önler.
 Şimdi echo $food yazdığında terminalin her açılışta sana "apricot" yanıtını vermeye hazır olmalı!
-                    

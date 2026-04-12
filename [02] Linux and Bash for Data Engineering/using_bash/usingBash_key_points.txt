@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Helper function to check disk usage 
+function disk_usage() {
+  df -h /
+}
+
+# Export variable to share between scripts
+export SERVER_NAME=$(hostname)
+
+# Source Python virtual environment 
+source ~/venv/bin/activate
+
+# Alias to deep path 
+alias docs="cd /Users/name/Documents"
+
+# Git plugin enabled in ~/.zshrc by default
+git status
+
+disk_usage # Print disk usage
+echo $SERVER_NAME # Share variable value

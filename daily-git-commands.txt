@@ -1,0 +1,7 @@
+# Günlük Git Rutini
+
+# Başlarken:
+git pull
+
+# Bitince:
+git add . && git commit -m "güncelleme" && git push

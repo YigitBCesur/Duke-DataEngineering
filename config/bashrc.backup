@@ -1,0 +1,25 @@
+# ~/.bashrc - COACH PEGASUS
+
+# Etkileşimli olmayan kabuklar için işlemi durdur
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
+# --- 1. GÜVENLİK VE GEÇMİŞ AYARLARI ---
+HISTCONTROL=ignoreboth
+export HISTIGNORE="export *:ls:exit:history"
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+# --- 2. COACH PEGASUS ÖZEL YAPILANDIRMA ---
+[ -f $HOME/apikeys.sh ] && source $HOME/apikeys.sh
+
+# --- 3. KISA YOLLAR (ALIASES) ---
+alias DEprojects='cd $HOME/Projects/Duke-DataEngineering'
+alias cls='clear'
+alias ll='ls -alF'
+
+# --- 4. OTOMASYON (AÇILIŞTA ÇALIŞACAKLAR) ---
+cd $HOME/Projects/Duke-DataEngineering
+[ -d $HOME/de_venv ] && source $HOME/de_venv/bin/activate

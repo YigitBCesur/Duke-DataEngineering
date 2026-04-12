@@ -125,3 +125,46 @@ echo "Benim en sevdiğim meyve $food, çünkü $food sağlıklıdır."
 Burada $food her geçtiği yere "elma" değerini koyar. Eğer yarın "armut" dersen, tüm cümle tek bir yerden güncellenmiş olur.
 
 Buradaki teorik altyapı, şu an üzerinde çalıştığın veri mühendisliği ve MLOps süreçlerinin (pipeline yapılarının) temelini oluşturuyor.
+
+----------------------------------------------------------------------------------------
+
+# Zsh (Parent Process) üzerinden bir Subshell olarak Bash (Child Process) başlattığımda, 
+ortam değişkenlerinin (Environment Variables) kalıtım (Inheritance) süreci nasıl işler?  (Bakiniz shell_variables.png )
+1. Ana Kabuk (Zsh + Oh My Zsh)
+İlk açılan o renkli, süslü yer senin Zsh kabuğun.
+
+Neden Renkli? Sen ona "Oh My Zsh" adında bir eklenti paketi kurmuşsun. 
+Bu paket, terminalin her satırını (prompt) senin için özelleştiriyor; 
+hangi klasördesin, hangi Git dalındasın (main yazan kısım) hepsini görselleştiriyor.
+
+Ayar Dosyası: Buranın tüm kuralları /home/yigit/.zshrc dosyasında yazılı.
+
+# 2. Alt Kabuk (Bash)
+Sen bash yazdığında, Zsh'in içinden çıkmadan ona "Bana bir de Bash tercümanı aç" dedin.
+
+Neden Sade? Bash, senin sisteminde "saf" (vanilla) halde duruyor. 
+Zsh için yaptığın o renkli temalar Bash'i etkilemez.
+
+Ayar Dosyası: Bash açılırken .bashrc dosyasını okur.
+
+Aralarındaki Temel Bağlar
+# A. Hiyerarşi (Baba - Evlat İlişkisi):
+Zsh şu an "Baba" (Parent), Bash ise "Evlat" (Child) konumunda.
+
+Eğer Zsh'teyken bir değişkeni export edersen, Bash onu tanır.
+
+Eğer sadece ders="linux" dersen, Bash (evlat) bunu göremez.
+
+# B. Dosya Yolu (Path):
+Her iki kabuk da aynı dosyaları görür. /mnt/c/... yolundaki dosyaların aynıdır 
+ama onları sana gösterme biçimleri farklıdır.
+
+# C. Geçiş Köprüsü:
+Terminalindeki o [INFO] Success: API keys loaded satırı bu bağın en somut kanıtı. 
+Sen Bash'e geçtiğin anda, Bash otomatik olarak gidip senin apikeys.sh dosyanı source etti (okudu). 
+Yani iki kabuk da aslında senin aynı ayar dosyalarını kullanacak şekilde birbirine bağlanmış.
+
+Özetle
+Senin ilk renkli ekranın "Makam Odası" (Zsh), bash yazıp girdiğin yer ise o odanın içindeki
+ "Çalışma Masası" (Bash). Masaya geçtiğinde odadaki genel kurallar (export edilenler) geçerli kalır 
+ ama masanın kendi sadeliği (temasız hali) devreye girer. 

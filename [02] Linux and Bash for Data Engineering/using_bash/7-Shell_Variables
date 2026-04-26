@@ -1,0 +1,273 @@
+A N A   T E R  I M L E R
+
+Shell Variable - A variable that exists only in the shell and stores data to be used in scripts or other processes
+Yalnızca kabukta var olan ve komut dosyalarında veya diğer işlemlerde kullanılacak verileri depolayan bir değişken.
+# Shell Variable
+food="apple"
+echo $food
+
+
+Export - A command that allows a shell variable to be accessed by child shells/processes
+Bir kabuk değişkenine alt kabuklar/işlemler tarafından erişilmesini sağlayan bir komut.
+# Export for child process access 
+export food="apple"
+bash
+echo $food
+
+
+Source - Runs a script in the current shell so any variables/aliases are available in the current environment
+Geçerli kabukta bir komut dosyası çalıştırır, böylece tüm değişkenler/takma adlar geçerli ortamda kullanılabilir hale gelir.
+# Source to load current environment
+source ./script.sh
+echo $food
+
+Parent/Child Processes - Parent processes launch child processes and can pass variables via export
+Ebeveyn süreçler çocuk süreçleri başlatır ve dışa aktarma yoluyla değişkenler aktarabilir.
+# Parent/Child Processes
+export food="apple"
+bash
+echo "In child - $food"
+
+
+Python Example
+# Access shell variable in Python
+import os
+print(os.environ['food'])
+
+
+ONEMLI NOTLAR  
+
+# 1- Değişkenler ve Görünmezlik Duvarı
+
+Bilgisayarda bir değişken tanımladığında (örneğin food="apple"), 
+bu bilgi o anki terminal penceresinin hafızasına kaydedilir. 
+Ancak Linux'ta katı bir kural vardır: "Alt süreçler, üst süreçlerin özel bilgilerini göremez."
+
+Neden export Kullanıyoruz?
+Diyelim ki bir terminal açtın (Ana Süreç) ve 
+içine food="apple" yazdın. Sonra bu terminalin içinden bir Python kodu 
+veya başka bir script çalıştırdın (Alt Süreç).
+
+Eğer sadece food="apple" dersen, Python bu elmayı göremez.
+
+Eğer export food="apple" dersen, o değişkeni "herkese açık" (global) hale getirirsin. Artık o terminalden başlattığın her şey elmayı görebilir.
+
+
+# 2-"Source" vs "Normal Çalıştırma"
+Bu ikisi arasındaki fark, bir misafirin senin evine gelip gelmemesi gibidir:
+
+Normal Çalıştırma (bash script.sh): Yeni bir oda (yeni bir terminal süreci) kiralanır, 
+script orada çalışır ve işi bitince o oda yıkılır. 
+İçinde tanımlanan tüm değişkenler o odayla birlikte yok olur. 
+Senin ana ekranına hiçbir şey yansımaz.
+
+Source Etme (source script.sh): Script senin mevcut odanda (mevcut terminalinde) çalışır. 
+Orada tanımlanan bir değişken, komut bittikten sonra bile terminalinde kalmaya devam eder.
+
+
+# Özet Bir Senaryo
+Senin ismin sistemde kayıtlı olan Yigit Brave Cesur.
+
+Terminale isim="Yigit" yazdın. (Sadece o terminal biliyor).
+
+Yeni bir terminal sekmesi açtın veya bir Python dosyası çalıştırdın. Orada echo $isim dersen boş çıkar. Çünkü "export" etmedin.
+
+Eğer export isim="Yigit" dersen, o terminalden açacağın her uygulama senin kim olduğunu bilir.
+
+# Kısacası:
+
+Shell: Tercüman.
+
+Variable: Sadece o anki pencerede geçerli not.
+
+Export: Notu, o pencereden açılan her şeyin görebileceği bir duyuru panosuna asmak.
+
+Source: Notu direkt kendi defterine yazdırmak.
+
+---------------------------------------------------------------------------------------
+
+WHAT IS SHELL VARIABLES ?
+
+Modern yazılım geliştirme dünyasının "gizli kahramanı" olan Environment Variables (Ortam Değişkenleri) yönetiminin tam kalbi. Özellikle güvenlik ve otomasyon kısmına değinmen çok yerinde olmuş.
+
+# 1. Güvenlik ve .gitignore İlişkisi
+Dediğin gibi, API anahtarlarını veya veritabanı şifrelerini kodun içine (hardcoded) yazmak, evin anahtarını kapının üzerinde bırakmak gibidir.
+
+Senaryo: Bir Python projesi geliştiriyorsun ve bir veritabanına bağlanman gerekiyor.
+
+Çözüm: Şifreyi .env dosyasına yazarsın. Git'e bu dosyayı yüklemezsin (.gitignore içinde .env satırı olur). Böylece kodun GitHub'da herkes tarafından görülse bile, şifrelerin sadece senin makinende (veya sunucunda) kalır.
+
+#2. "Tab" Tuşu: En İyi Dostun
+Bahsettiğin o "sekme (Tab)" tuşu ipucu aslında terminalde sadece değişkenleri değil, dosya yollarını ve komutları da tamamlar. Bu sadece hız kazandırmaz, aynı zamanda yazım hatasını (typo) engeller. Eğer Tab'a bastığında tamamlanmıyorsa, ya o değişken tanımlanmamıştır ya da bir harfi yanlış yazmışsındır. Bu en hızlı hata ayıklama (debug) yöntemidir.
+
+#3. Otomasyon ve Dizine Özel Değişkenler
+Bahsettiğin "belirli bir dizine geçtiğinde değişkenleri kaynaklama (source)" olayı profesyonel hayatta çok yaygındır. Örneğin;
+
+A projesi için Python 3.9 ve bir API anahtarı lazımdır.
+
+B projesi için Python 3.11 ve farklı bir veritabanı yolu lazımdır.
+
+Bunu otomatize etmek için direnv gibi araçlar kullanılır. Sen o klasöre girdiğin anda sistem otomatik olarak source .env komutunu çalıştırır. Sen klasörden çıkınca bu değişkenler hafızadan silinir.
+
+Küçük Bir Teknik Hatırlatma (Bash vs. Zsh)
+Yazının sonunda belirttiğin gibi, Bash veya Zsh (Mac'lerde varsayılan olan) kullanman fark etmez; değişken mantığı aynıdır. Ancak bir farka dikkat:
+
+Bash'te: export food="apple"
+
+Zsh'te: Yine export food="apple" çalışır ama bazı gelişmiş özellikler (array tanımlama gibi) küçük farklılıklar gösterebilir.
+
+#Pratik Bir Örnek: Cümle İçinde Kullanım
+Yazdığın örneği terminalde şu şekilde birleştirebilirsin:
+
+Bash
+export food="elma"
+echo "Benim en sevdiğim meyve $food, çünkü $food sağlıklıdır."
+Burada $food her geçtiği yere "elma" değerini koyar. Eğer yarın "armut" dersen, tüm cümle tek bir yerden güncellenmiş olur.
+
+Buradaki teorik altyapı, şu an üzerinde çalıştığın veri mühendisliği ve MLOps süreçlerinin (pipeline yapılarının) temelini oluşturuyor.
+
+----------------------------------------------------------------------------------------
+
+# Zsh (Parent Process) üzerinden bir Subshell olarak Bash (Child Process) başlattığımda, 
+ortam değişkenlerinin (Environment Variables) kalıtım (Inheritance) süreci nasıl işler?  (Bakiniz shell_variables.png )
+1. Ana Kabuk (Zsh + Oh My Zsh)
+İlk açılan o renkli, süslü yer senin Zsh kabuğun.
+
+Neden Renkli? Sen ona "Oh My Zsh" adında bir eklenti paketi kurmuşsun. 
+Bu paket, terminalin her satırını (prompt) senin için özelleştiriyor; 
+hangi klasördesin, hangi Git dalındasın (main yazan kısım) hepsini görselleştiriyor.
+
+Ayar Dosyası: Buranın tüm kuralları /home/yigit/.zshrc dosyasında yazılı.
+
+# 2. Alt Kabuk (Bash)
+Sen bash yazdığında, Zsh'in içinden çıkmadan ona "Bana bir de Bash tercümanı aç" dedin.
+
+Neden Sade? Bash, senin sisteminde "saf" (vanilla) halde duruyor. 
+Zsh için yaptığın o renkli temalar Bash'i etkilemez.
+
+Ayar Dosyası: Bash açılırken .bashrc dosyasını okur.
+
+Aralarındaki Temel Bağlar
+# A. Hiyerarşi (Baba - Evlat İlişkisi):
+Zsh şu an "Baba" (Parent), Bash ise "Evlat" (Child) konumunda.
+
+Eğer Zsh'teyken bir değişkeni export edersen, Bash onu tanır.
+
+Eğer sadece ders="linux" dersen, Bash (evlat) bunu göremez.
+
+# B. Dosya Yolu (Path):
+Her iki kabuk da aynı dosyaları görür. /mnt/c/... yolundaki dosyaların aynıdır 
+ama onları sana gösterme biçimleri farklıdır.
+
+# C. Geçiş Köprüsü:
+Terminalindeki o [INFO] Success: API keys loaded satırı bu bağın en somut kanıtı. 
+Sen Bash'e geçtiğin anda, Bash otomatik olarak gidip senin apikeys.sh dosyanı source etti (okudu). 
+Yani iki kabuk da aslında senin aynı ayar dosyalarını kullanacak şekilde birbirine bağlanmış.
+
+Özetle
+Senin ilk renkli ekranın "Makam Odası" (Zsh), bash yazıp girdiğin yer ise o odanın içindeki
+ "Çalışma Masası" (Bash). Masaya geçtiğinde odadaki genel kurallar (export edilenler) geçerli kalır 
+ ama masanın kendi sadeliği (temasız hali) devreye girer. 
+
+ ------------------------------------------------------------------------
+
+ ##Ders Özeti
+
+Bu derste Bash'te kabuk değişkenleriyle çalışma ele alındı. 
+Ders, kabuk değişkenlerinin ne olduğunu tanımlayarak başladı: komut dosyalarında veya diğer işlemlerde kullanılacak verileri 
+depolamanın bir yolu. Yaygın kullanım örnekleri arasında API anahtarlarını veya diğer gizli bilgileri güvenli bir şekilde 
+saklamak yer alır.
+
+Dersin devamında, alt kabuklarda/işlemlerde erişime izin vermek için değişkenlerin nasıl dışa aktarılacağı ele alındı.
+ `export` komutu, ana kabuktan başlatılan alt işlemlerin dışa aktarılan değişkeni devralmasını sağlar.
+
+Ayrıca, mevcut kabukta bir betiği çalıştıran ve kaynak dosyada tanımlanan tüm değişkenleri/takma adları mevcut ortama 
+yükleyen `source` komutunu da ele aldık. Bu, gerektiğinde bağlama özgü değişkenleri yüklemenizi sağlar.
+
+Ana ve alt süreçler arasındaki fark da ele alındı. 
+Alt süreçlerin ana süreçte belirlenen değerlere erişebilmesi için değişkenlerin dışa aktarılması gerekmektedir.
+
+###Önemli Noktalar
+
+Kabuk değişkenleri, komut dosyaları/işlemler için veri depolar.
+
+Dışa aktarma işlemi, değişkenlerin alt süreçler tarafından erişilebilir olmasını sağlar.
+
+Kaynak, mevcut kabuk ortamında bir komut dosyası çalıştırır.
+
+Ana/alt süreç değişkeninin görünürlüğü dışa aktarmaya bağlıdır.
+
+
+###Düşünme Soruları
+
+Kabuk değişkenini ne zaman, komut dosyası değişkenini ne zaman kullanırsınız?
+
+Değişkenleri dışa aktarmak, gizli bilgileri veya yapılandırmayı yönetmeye nasıl yardımcı olabilir?
+
+Kaynak koddan çalıştırmak ile bir betiği normal şekilde çalıştırmak arasındaki fark nedir?
+
+.bashrc dosyasında değişkenleri tanımlarken `export` neden önemlidir?
+
+Kaynak değişken dosyalarını kullanarak proje ortamlarını nasıl yapılandırabilirsiniz?
+
+
+###Zorlu Egzersizler
+
+Bir kabuk değişkeni oluşturun ve onu yazdırın.
+
+Bir değişkeni dışa aktarın, bir alt işlem başlatın ve değişkeni yazdırın.
+
+Bir komut dosyası dosyasını kaynak olarak kullanın ve tanımladığı bir değişkene erişin.
+
+Bir .env dosyası oluşturun ve bu dosyayı bir betikten çalıştırın.
+
+Bir dosyayı kaynak olarak kullanan bir takma addan proje ortam değişkenlerini yükle.
+
+
+
+#!/bin/bash
+
+# Shell variable
+NAME="John"
+
+# Print variable
+print_name(){
+  echo "My name is $NAME"
+}
+
+print_name
+
+# Export variable
+export NAME 
+
+# Child process
+bash
+print_name
+
+# Source variables 
+source .env
+print_name
+
+# Project alias
+alias project1="cd project1; source project1.env"
+
+project1
+print_name
+
+##TESTS
+1- Which command makes a variable accessible to child processes?       
+Export--The export command makes a variable accessible to any child processes.
+
+
+2- What is the difference between running a script normally and using the source command?  
+source runs the script in the current shell environment- 
+source runs the script in the existing shell so any aliases/variables are loaded into the current environment.
+
+3- Why should variables be exported in .bashrc?
+So child shells inherit the variables . Exporting variables in .bashrc allows child shells to access them.
+
+4- What is the difference between a shell variable and a script variable?
+Lifetime . A script variable exists only when the script is running while a shell variable persists across commands/sessions.
+
+5- How can shell variables help improve security?
+Separate secret storage. Storing secrets in shell variables allows you to keep them separate from code for security.
